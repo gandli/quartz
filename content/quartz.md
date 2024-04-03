@@ -47,6 +47,7 @@ tags:
     ```
 
 6. 添加rss
+    `quartz.layout.ts`
 
     ```ts
      "RSS":"https://blog.chenxuexin.com/index.xml"
