@@ -45,3 +45,9 @@ tags:
     ```bash
     npx quartz update
     ```
+
+6. 添加rss
+
+    ```ts
+     "RSS":"https://blog.chenxuexin.com/index.xml"
+    ```
