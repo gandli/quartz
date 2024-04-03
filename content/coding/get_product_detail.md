@@ -3,6 +3,7 @@ title: 使用 Python 获取卷烟信息
 draft: false
 tags:
   - python
+  - 卷烟
 ---
 ```python
 import requests
