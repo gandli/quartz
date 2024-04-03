@@ -54,5 +54,5 @@ tags:
     ```
 
 7. 添加评论功能
-      使用 `giscus`
-      <https://github.com/xy-241/CS-Notes/commit/d4748776fc18382e293421266084c3a165a04afd>
+      基于 [giscus](https://giscus.app/zh-CN)，[使用方法](https://github.com/xy-241/CS-Notes/commit/d4748776fc18382e293421266084c3a165a04afd)
+  
