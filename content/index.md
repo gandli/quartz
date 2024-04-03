@@ -1,5 +1,5 @@
 ---
-title: 欢迎来到我的blog——blog.chenxuexin.com
+title: 欢迎
 ---
 
-这是我的一个blog。
+欢迎来到我的blog——blog.chenxuexin.com
