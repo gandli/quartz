@@ -1,6 +1,5 @@
 ---
-title: Welcome to Quartz
+title: 欢迎来到我的blog——blog.chenxuexin.com
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+这是我的一个blog。
