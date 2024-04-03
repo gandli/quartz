@@ -1,5 +1,5 @@
 ---
-title: 2024-04-03
+title: {{date}}
 draft: false
 tags:
   - diary
