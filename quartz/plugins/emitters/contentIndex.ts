@@ -32,8 +32,8 @@ const defaultOptions: Options = {
   enableSiteMap: true,
   enableRSS: true,
   rssLimit: 10,
-  rssFullHtml: false,
-  includeEmptyFiles: true,
+  rssFullHtml: true,
+  includeEmptyFiles: false,
 }
 
 function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndex): string {
