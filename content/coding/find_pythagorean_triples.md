@@ -3,6 +3,7 @@ title: 使用 Python 查找勾股数
 draft: false
 tags:
   - 勾股数
+  - python
 ---
 ```python
  def find_pythagorean_triples():
