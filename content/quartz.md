@@ -52,3 +52,9 @@ tags:
     ```ts
      "RSS":"https://blog.chenxuexin.com/index.xml"
     ```
+
+7. 添加评论功能
+
+    ```
+    
+    ```
