@@ -4,7 +4,6 @@ draft: false
 tags:
   - diary
 ---
-
 ```python
 import requests
 import json
@@ -72,6 +71,7 @@ with pd.ExcelWriter(xlsx_filename, engine="xlsxwriter") as writer:
 
 print(f"所有产品详细信息已保存到：{json_filename}和{xlsx_filename}")
 ```
+
 ```json
 {
     "productName": "品规名称",
