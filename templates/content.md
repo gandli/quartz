@@ -1,7 +1,7 @@
 ---
-title: Title
+title: 
 draft: false
 tags:
-  - tag
+  - 
 ---
  
