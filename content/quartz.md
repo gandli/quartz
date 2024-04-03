@@ -46,13 +46,13 @@ tags:
     npx quartz update
     ```
 
-6. 添加rss
+6. 添加rss（可选）
     `quartz.layout.ts`
 
     ```ts
      "RSS":"https://blog.chenxuexin.com/index.xml"
     ```
 
-7. 添加评论功能
+7. 添加评论功能（可选）
       基于 [giscus](https://giscus.app/zh-CN)，[使用方法](https://github.com/xy-241/CS-Notes/commit/d4748776fc18382e293421266084c3a165a04afd)
   
