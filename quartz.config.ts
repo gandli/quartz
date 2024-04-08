@@ -17,7 +17,7 @@ const config: QuartzConfig = {
     locale: "zh-CN",
     baseUrl: "blog.chenxuexin.com",
     ignorePatterns: ["private", "templates", ".obsidian"],
-    defaultDateType: "modified", //created
+    defaultDateType: "created", //modified
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
