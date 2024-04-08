@@ -2,6 +2,14 @@
 title: 
 draft: false
 tags:
+  - VPS
+  - SSH
+  - 安全
+  - jq
+  - Docker
+  - curl
+  - Debian
+  - apt
 ---
 # 在 VPS 上提升安全性和效率的关键操作
 ## VPS禁用用户名密码登录，启用 SSH 登录
