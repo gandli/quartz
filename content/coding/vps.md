@@ -1,5 +1,5 @@
 ---
-title: 
+title: VPS禁用用户名密码登录，启用 SSH 登录
 draft: false
 tags:
   - VPS
@@ -11,9 +11,6 @@ tags:
   - Debian
   - apt
 ---
-# 在 VPS 上提升安全性和效率的关键操作
-
-## VPS禁用用户名密码登录，启用 SSH 登录
 
 1. 本地
  首先，在本地生成 SSH 公钥，并将其复制到 VPS 上：
