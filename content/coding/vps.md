@@ -31,6 +31,15 @@ tags:
  sudo systemctl restart sshd
  ```
 
+3. 进一步禁用 `root` ，创建 `user`
+
+ ```bash
+ useradd -m user && echo "user:password" | chpasswd
+ usermod -aG sudo user
+ sed -i 's/#PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config || sed -i 's/PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
+ systemctl restart sshd
+ ```
+
 ## 安装`jq`
 
 `jq` 是一个强大的 JSON 处理工具。可以通过以下命令安装：
@@ -58,12 +67,3 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh ./get-docker.sh
 docker -v
 ```  
-
-## 禁用 `root` ，创建 `user`
-
-```bash
-useradd -m user && echo "user:password" | chpasswd
-usermod -aG sudo user
-sed -i 's/#PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config || sed -i 's/PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
-systemctl restart sshd
-```
