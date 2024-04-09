@@ -8,7 +8,9 @@ tags:
   - tmux
   - iterm2
 ---
-## 清空`dock`
+## 系统设置
+
+### 清空`dock`
 
 ```bash
 defaults delete com.apple.dock persistent-apps # 包含启动台等图标
@@ -16,11 +18,11 @@ defaults delete com.apple.dock persistent-others
 killall Dock
 ```
 
-## 取消 4 位数密码限制
+### 取消 4 位数密码限制
 
 `pwpolicy -clearaccountpolicies`
 
-## 程序坞自动隐藏加速
+### 程序坞自动隐藏加速
 
 ```bash
 # 设置启动坞动画时间设置为 0.5 秒 
@@ -36,7 +38,7 @@ defaults delete com.apple.dock autohide-time-modifier && killall Dock
 defaults delete com.apple.Dock autohide-delay && killall Dock
 ```
 
-## 启动台自定义行和列
+### 启动台自定义行和列
 
 ```bash
 # 设置列数
@@ -56,35 +58,37 @@ defaults write com.apple.dock springboard-columns Default
 killall Dock
 ```
 
-## 允许安装任意来源的 App
+### 允许安装任意来源的 App
 
 `sudo spctl --master-disable`
 
-## 安装 Xcode Command Line Tools
+## 软件安装
+
+### 安装 Xcode Command Line Tools
 
 `xcode-select --install`
 
-## 安装[[Homebrew]]
+### 安装[[Homebrew]]
 
 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
-### 国内环境安装命令
+#### 国内环境安装命令
 
 `/bin/bash -c "$(curl -fsSL <https://gitee.com/ineo6/homebrew-install/raw/master/install.sh>)"`
 
-## 安装cask便于后面软件的安装
+### 安装cask便于后面软件的安装
 
 `brew install cask`
 
-## 安装mas
+### 安装mas
 
 `brew install mas`
 
-## 安装raycast
+### 安装raycast
 
 `brew install --cask raycast`
 
-## 安装zsh + starship ~~oh-my-zsh~~ + zplug
+### 安装zsh + starship ~~oh-my-zsh~~ + zplug
 
 ```bash
 brew install zsh gawk git zplug
@@ -92,39 +96,39 @@ brew install zsh gawk git zplug
 brew install starship
 ```
 
-## 安装iterm2
+### 安装iterm2
 
 `brew install --cask iterm2`
 
-## 安装tmux
+### 安装tmux
 
 `brew install tmux`
 
-## 安装vim
+### 安装vim
 
 `brew install vim`
 
-## 安装zoxide、fzf
+### 安装zoxide、fzf
 
 `brew install zoxide fzf`
 
-## 安装jenv
+### 安装jenv
 
 `brew install --cask homebrew/cask-versions/zulu11 homebrew/cask-versions/zulu13 homebrew/cask-versions/zulu15 homebrew/cask-versions/zulu17 homebrew/cask-versions/zulu21 homebrew/cask-versions/zulu7 homebrew/cask-versions/zulu8 zulu`
 
-## 安装fnm
+### 安装fnm
 
 `brew install fnm`
 
-## 安装pyenv
+### 安装pyenv
 
 `brew install pyenv`
 
-## 安装rust
+### 安装rust
 
 `brew install rustup-init`
 
-## `zshrc`
+### `zshrc`
 
 `vim ~/.zshrc`
 
