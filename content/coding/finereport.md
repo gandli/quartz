@@ -13,6 +13,7 @@ tags:
  ![[Pasted image 20240409140210.png]]
 
 1. 使用Python 脚本添加中心点经纬度：
+
    ![[Pasted image 20240409140655.png]]
  `350122.geojson` 修改文件名 `350122-area.json`
 
