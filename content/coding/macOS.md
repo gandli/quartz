@@ -128,8 +128,15 @@ brew install starship
 
 `brew install rustup-init`
 
+### 安装rime
 
+[Rime输入法安装脚本](https://github.com/Mark24Code/rime-auto-deploy)
 
+```bash
+git clone --depth=1 https://github.com/Mark24Code/rime-auto-deploy.git --branch latest
+cd rime-auto-deploy
+./installer.rb
+```
 
 ## `zshrc`
 
