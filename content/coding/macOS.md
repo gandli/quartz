@@ -129,37 +129,37 @@ brew install starship
 `vim ~/.zshrc`
 
 ```plain
-# 初始化 Powerlevel10k 即时提示符。应该放在 ~/.zshrc 的顶部附近。
-# 需要控制台输入的初始化代码（密码提示、[y/n]确认等）必须放在此块上方；
+# 启用 Powerlevel10k 即时提示符功能，应该放置于 ~/.zshrc 文件顶部附近。
+# 需要控制台输入的初始化代码（如密码提示、[y/n]确认等）必须放在此块之上；
 # 其他所有内容可以放在下方。
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
-# 📦 加载 zplug 插件管理器
+# 🚀 加载 zplug，一个社区驱动的插件管理器
 source ~/.zplug/init.zsh
 
 # 🔧 历史记录配置
-HISTSIZE=10000
-SAVEHIST=10000
-HISTFILE=~/.zsh_history
+HISTSIZE=10000  # 历史记录大小
+SAVEHIST=10000  # 保存的历史记录数量
+HISTFILE=~/.zsh_history  # 历史记录文件路径
 
-# 🚀 zplug 插件列表
-# zplug "romkatv/powerlevel10k", as:theme, depth:1
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zdharma/fast-syntax-highlighting"
-zplug "zpm-zsh/ls"
-zplug "plugins/docker", from:oh-my-zsh
-zplug "plugins/composer", from:oh-my-zsh
-zplug "plugins/extract", from:oh-my-zsh
-zplug "lib/completion", from:oh-my-zsh
-zplug "plugins/sudo", from:oh-my-zsh
-zplug "b4b4r07/enhancd", use:init.sh
+# 🎨 zplug 插件
+# zplug "romkatv/powerlevel10k", as:theme, depth:1  # 主题配置，当前为注释状态
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'  # zplug 自管理
+zplug "zsh-users/zsh-completions"  # zsh 补全插件
+zplug "zsh-users/zsh-history-substring-search"  # 历史记录子字符串搜索
+zplug "zsh-users/zsh-autosuggestions"  # 命令自动建议
+zplug "zdharma/fast-syntax-highlighting"  # 快速语法高亮
+zplug "zpm-zsh/ls"  # ls 命令增强
+zplug "plugins/docker", from:oh-my-zsh  # Docker 插件
+zplug "plugins/composer", from:oh-my-zsh  # Composer 插件
+zplug "plugins/extract", from:oh-my-zsh  # 解压插件
+zplug "lib/completion", from:oh-my-zsh  # 补全库
+zplug "plugins/sudo", from:oh-my-zsh  # sudo 插件
+zplug "b4b4r07/enhancd", use:init.sh  # 增强型cd命令
 
-# 如果还有未安装的包，则安装它们
+# 如果有尚未安装的包，进行安装
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -171,49 +171,53 @@ fi
 zplug load
 
 # 自定义提示符，请运行 `p10k configure` 或编辑 ~/.p10k.zsh。
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# 🐍 pyenv 环境变量配置
+# 🐍 设置 pyenv 环境变量
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# 🌌 Starship 提示符初始化
+# 🚀 配置 starship 提示符
 eval "$(starship init zsh)"
 
-# 📂 zoxide 目录跳转
+# 📁 使用 zoxide 进行目录跳转
 eval "$(zoxide init zsh)"
 
-# 设置fzf键绑定和模糊补全
-eval "$(fzf --zsh)"
-
-# 📦 fnm Node.js 版本管理
+# 📦 配置 fnm (Fast Node Manager)
 eval "$(fnm env --use-on-cd)"
 
-# 更新 PATH 环境变量
+# 更新 PATH 环境变量以包含 homebrew 安装的 curl
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 
-# 📦 pnpm 环境变量配置
+# 📦 配置 pnpm 环境变量
 export PNPM_HOME="/Users/chi/Library/pnpm"
 case ":$PATH:" in
-*":$PNPM_HOME:"*) ;;
-*) export PATH="$PNPM_HOME:$PATH" ;;
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm 配置结束
 
-# 🖥️ Tmux 会话管理脚本
-# 用于在 Apple Terminal 或 iTerm2 使用时自动管理 Tmux 会话。
-# 如果名为 mySession 的会话不存在，则创建它；如果存在，则连接到它。
+# 🖥️ Tmux 会话管理：若当前终端为 Apple Terminal 或 iTerm2，则尝试连接或创建名为 mySession 的会话
 if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ]; then
-    tmux has-session -t mySession &> /dev/null
+    tmux has-session -t mySession &> /dev/null  # 检查是否存在会话
     if [ $? != 0 ]; then
-        tmux new-session -s mySession
+        tmux new-session -s mySession  # 不存在则创建
     elif [ -z "$TMUX" ]; then
-        tmux attach-session -t mySession
+        tmux attach-session -t mySession  # 存在则附加
     fi
 fi
 
-# jenv
+# 📦 配置 jenv，Java 版本管理器
 export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)" 
+eval "$(jenv init -)"
+
+# 🔧 配置 zsh 补全路径
+fpath=(
+  /opt/homebrew/share/zsh-completions(N-/)  # Homebrew 安装的 zsh 补全
+  /opt/homebrew/share/zsh/site-functions(N-/)  # Homebrew 安装的 site-functions
+  ~/.config/zsh/zsh-completions(N-/)  # 用户自定义的 zsh 补全
+  /opt/homebrew/share/zsh/site-functions(N-/)  # 重复的路径，可能需要删除
+  $fpath
+)
 ```
