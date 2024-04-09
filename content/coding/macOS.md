@@ -7,6 +7,15 @@ tags:
   - zplug
   - tmux
   - iterm2
+  - pyenv
+  - fnm
+  - jenv
+  - vim
+  - python
+  - nodejs
+  - java
+  - rust
+  - raycast
 ---
 ## 系统设置
 
