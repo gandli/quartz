@@ -128,38 +128,37 @@ brew install starship
 
 `vim ~/.zshrc`
 
-```plain
-# 启用 Powerlevel10k 即时提示符功能，应该放置于 ~/.zshrc 文件顶部附近。
-# 需要控制台输入的初始化代码（如密码提示、[y/n]确认等）必须放在此块之上；
-# 其他所有内容可以放在下方。
+```
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
 #if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
 
-# 🚀 加载 zplug，一个社区驱动的插件管理器
 source ~/.zplug/init.zsh
 
-# 🔧 历史记录配置
-HISTSIZE=10000  # 历史记录大小
-SAVEHIST=10000  # 保存的历史记录数量
-HISTFILE=~/.zsh_history  # 历史记录文件路径
+# History config
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
 
-# 🎨 zplug 插件
-# zplug "romkatv/powerlevel10k", as:theme, depth:1  # 主题配置，当前为注释状态
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'  # zplug 自管理
-zplug "zsh-users/zsh-completions"  # zsh 补全插件
-zplug "zsh-users/zsh-history-substring-search"  # 历史记录子字符串搜索
-zplug "zsh-users/zsh-autosuggestions"  # 命令自动建议
-zplug "zdharma/fast-syntax-highlighting"  # 快速语法高亮
-zplug "zpm-zsh/ls"  # ls 命令增强
-zplug "plugins/docker", from:oh-my-zsh  # Docker 插件
-zplug "plugins/composer", from:oh-my-zsh  # Composer 插件
-zplug "plugins/extract", from:oh-my-zsh  # 解压插件
-zplug "lib/completion", from:oh-my-zsh  # 补全库
-zplug "plugins/sudo", from:oh-my-zsh  # sudo 插件
-zplug "b4b4r07/enhancd", use:init.sh  # 增强型cd命令
+# zplug plugins
+# zplug "romkatv/powerlevel10k", as:theme, depth:1
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zdharma/fast-syntax-highlighting"
+zplug "zpm-zsh/ls"
+zplug "plugins/docker", from:oh-my-zsh
+zplug "plugins/composer", from:oh-my-zsh
+zplug "plugins/extract", from:oh-my-zsh
+zplug "lib/completion", from:oh-my-zsh
+zplug "plugins/sudo", from:oh-my-zsh
+zplug "b4b4r07/enhancd", use:init.sh
 
-# 如果有尚未安装的包，进行安装
+# Install packages that have not been installed yet
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -170,54 +169,65 @@ if ! zplug check --verbose; then
 fi
 zplug load
 
-# 自定义提示符，请运行 `p10k configure` 或编辑 ~/.p10k.zsh。
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# 🐍 设置 pyenv 环境变量
+# pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# 🚀 配置 starship 提示符
+# starship
 eval "$(starship init zsh)"
 
-# 📁 使用 zoxide 进行目录跳转
+# zoxide
 eval "$(zoxide init zsh)"
 
-# 📦 配置 fnm (Fast Node Manager)
+# fnm
 eval "$(fnm env --use-on-cd)"
 
-# 更新 PATH 环境变量以包含 homebrew 安装的 curl
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 
-# 📦 配置 pnpm 环境变量
+# pnpm
 export PNPM_HOME="/Users/chi/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm 配置结束
+# pnpm end
 
-# 🖥️ Tmux 会话管理：若当前终端为 Apple Terminal 或 iTerm2，则尝试连接或创建名为 mySession 的会话
+# 此脚本用于检查当前使用的终端是否为 Apple Terminal 或 iTerm2。如果是，
+# 它将尝试连接到一个名为 mySession 的现有 Tmux 会话。如果这个会话不存在，
+# 脚本会创建一个新的会话。此脚本旨在简化终端会话管理，特别适用于那些
+# 喜欢使用 Tmux 进行多窗口管理的用户。适用于需要快速恢复工作环境的场景。
+
+# 当前终端程序是苹果终端或 iTerm2 时，才执行以下操作
 if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ]; then
-    tmux has-session -t mySession &> /dev/null  # 检查是否存在会话
+    # 尝试查找名为 mySession 的 Tmux 会话，输出重定向到 /dev/null（即不显示任何输出）
+    tmux has-session -t mySession &> /dev/null
+    
+    # 检查上一条命令的退出状态
+    # 如果 $? 不等于 0，表示没有找到名为 mySession 的会话
     if [ $? != 0 ]; then
-        tmux new-session -s mySession  # 不存在则创建
+        # 创建一个新的名为 mySession 的 Tmux 会话
+        tmux new-session -s mySession
+    # 如果上一个命令执行成功（即找到了名为 mySession 的会话），
+    # 但当前不在任何 Tmux 会话内（即 $TMUX 环境变量为空）
     elif [ -z "$TMUX" ]; then
-        tmux attach-session -t mySession  # 存在则附加
+        # 则附加到名为 mySession 的会话
+        tmux attach-session -t mySession
     fi
 fi
-
-# 📦 配置 jenv，Java 版本管理器
+# jenv
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-# 🔧 配置 zsh 补全路径
+# completions
 fpath=(
-  /opt/homebrew/share/zsh-completions(N-/)  # Homebrew 安装的 zsh 补全
-  /opt/homebrew/share/zsh/site-functions(N-/)  # Homebrew 安装的 site-functions
-  ~/.config/zsh/zsh-completions(N-/)  # 用户自定义的 zsh 补全
-  /opt/homebrew/share/zsh/site-functions(N-/)  # 重复的路径，可能需要删除
+  /opt/homebrew/share/zsh-completions(N-/)
+  /opt/homebrew/share/zsh/site-functions(N-/)
+  ~/.config/zsh/zsh-completions(N-/)
+  /opt/homebrew/share/zsh/site-functions(N-/)
   $fpath
 )
 ```
