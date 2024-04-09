@@ -10,13 +10,13 @@ tags:
   - JSON
 ---
 
-1. 在 <https://www.poi86.com/> （这个 POI 数据网站似乎国内不能访问。）下载 [连江县](https://www.poi86.com/poi/amap/district/350122/1.html) 地图数据
-   连江县边界_350122_GeoJSON_(poi86.com).zip
- ![[Pasted image 20240409140210.png]]
+1. 在 <https://www.poi86.com/> (这个 POI 数据网站似乎国内不能访问。) 下载[连江县](https://www.poi86.com/poi/amap/district/350122/1.html)地图数据
+   连江县边界 _350122_GeoJSON_(poi86.com)。zip
+ ！[[Pasted image 20240409140210.png]]
 
-1. 使用Python 脚本添加中心点经纬度：
- 帆软自定义geojson地图的格式：
-   ![[Pasted image 20240409140655.png]]
+1. 使用 Python 脚本添加中心点经纬度：
+ 帆软自定义 geojson 地图的格式：
+   ！[[Pasted image 20240409140655.png]]
  `350122.geojson` 修改文件名 `350122-area.json`
 
   ```python
@@ -64,11 +64,11 @@ tags:
 
 3. 加载资源
 
-   1. 将JSON文件放在工程webapps\webroot\WEB-INF\assets\map\image文件夹下
-   2. 在数据决策系统中，点击「管理系统>地图配置>同步地理文件」即可。
+   1. 将 JSON 文件放在工程 webapps\webroot\WEB-INF\assets\map\image 文件夹下
+   2. 在数据决策系统中，点击 “管理系统>地图配置>同步地理文件” 即可。
 
 ![[Pasted image 20240409142455.png]]
 
-![[截屏2024-04-09 13.02.38.png]]
+！[[截屏 2024-04-09 13.02.38.png]]
 
 参考：[帆软的文档](https://help.fanruan.com/finereport/doc-view-2110.html)
