@@ -114,7 +114,11 @@ brew install starship
 
 ## 安装fnm
 
+`brew install fnm`
+
 ## 安装pyenv
+
+`brew install pyenv`
 
 ## 安装rust
 
