@@ -17,5 +17,6 @@
     ```bash
     npx quartz update
     ```
+
 4. 格式化 md 文件 ，提交commit message 并git push
    `npx @lint-md/cli content/**/* --fix && git add . && npx czg ai && git push`
