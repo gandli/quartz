@@ -128,7 +128,10 @@ brew install starship
 
 `brew install rustup-init`
 
-### `zshrc`
+
+
+
+## `zshrc`
 
 `vim ~/.zshrc`
 
