@@ -36,6 +36,25 @@ defaults delete com.apple.dock autohide-time-modifier && killall Dock
 defaults delete com.apple.Dock autohide-delay && killall Dock
 ```
 
+## 启动台自定义行和列
+```bash
+# 设置列数
+defaults write com.apple.dock springboard-columns -int 7
+
+# 设置行数
+defaults write com.apple.dock springboard-rows -int 6
+
+# 重启 Dock 生效
+killall Dock
+
+# 恢复默认的列数和行数
+defaults write com.apple.dock springboard-rows Default
+defaults write com.apple.dock springboard-columns Default
+
+# 重启 Dock 生效
+killall Dock
+```
+
 ## [[Homebrew]]
 
 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
