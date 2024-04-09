@@ -71,6 +71,14 @@ killall Dock
 
 `/bin/bash -c "$(curl -fsSL <https://gitee.com/ineo6/homebrew-install/raw/master/install.sh>)"`
 
+## 安装cask便于后面软件的安装
+
+`brew install cask`
+
+## raycast
+
+`brew install --cask raycast`
+
 ## zsh + oh-my-zsh + zplug
 
 ```bash
