@@ -8,7 +8,8 @@ tags:
   - tmux
   - iterm2
 ---
-# `zshrc`:
+# `zshrc`
+
 ```
 # 初始化 Powerlevel10k 即时提示符。应该放在 ~/.zshrc 的顶部附近。
 # 需要控制台输入的初始化代码（密码提示、[y/n]确认等）必须放在此块上方；
@@ -91,4 +92,5 @@ if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ]; 
     fi
 fi
 ```
+
 ## [[Homebrew]]
