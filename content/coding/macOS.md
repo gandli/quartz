@@ -85,19 +85,19 @@ killall Dock
 
 `/bin/bash -c "$(curl -fsSL <https://gitee.com/ineo6/homebrew-install/raw/master/install.sh>)"`
 
-### 安装cask便于后面软件的安装
+### 安装 cask 便于后面软件的安装
 
 `brew install cask`
 
-### 安装mas
+### 安装 mas
 
 `brew install mas`
 
-### 安装raycast
+### 安装 raycast
 
 `brew install --cask raycast`
 
-### 安装zsh + starship ~~oh-my-zsh~~ + zplug
+### 安装 zsh + starship ~~oh-my-zsh~~ + zplug
 
 ```bash
 brew install zsh gawk git zplug
@@ -105,41 +105,41 @@ brew install zsh gawk git zplug
 brew install starship
 ```
 
-### 安装iterm2
+### 安装 iterm2
 
 `brew install --cask iterm2`
 
-### 安装tmux
+### 安装 tmux
 
 `brew install tmux`
 
-### 安装vim
+### 安装 vim
 
 `brew install vim`
 
-### 安装zoxide、fzf
+### 安装 zoxide、fzf
 
 `brew install zoxide fzf`
 
-### 安装jenv
+### 安装 jenv
 
 `brew install --cask homebrew/cask-versions/zulu11 homebrew/cask-versions/zulu13 homebrew/cask-versions/zulu15 homebrew/cask-versions/zulu17 homebrew/cask-versions/zulu21 homebrew/cask-versions/zulu7 homebrew/cask-versions/zulu8 zulu`
 
-### 安装fnm
+### 安装 fnm
 
 `brew install fnm`
 
-### 安装pyenv
+### 安装 pyenv
 
 `brew install pyenv`
 
-### 安装rust
+### 安装 rust
 
 `brew install rustup-init`
 
-### 安装rime
+### 安装 rime
 
-[Rime输入法安装脚本](https://github.com/Mark24Code/rime-auto-deploy)
+[Rime 输入法安装脚本](https://github.com/Mark24Code/rime-auto-deploy)
 
 ```bash
 git clone --depth=1 https://github.com/Mark24Code/rime-auto-deploy.git --branch latest
@@ -151,7 +151,7 @@ cd rime-auto-deploy
 
 `vim ~/.zshrc`
 
-```
+```plain
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
