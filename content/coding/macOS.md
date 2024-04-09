@@ -55,9 +55,21 @@ defaults write com.apple.dock springboard-columns Default
 killall Dock
 ```
 
+## 允许安装任意来源的 App
+
+`sudo spctl --master-disable`
+
+## 安装 Xcode Command Line Tools
+
+`xcode-select --install`
+
 ## [[Homebrew]]
 
 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+### 国内环境安装命令
+
+`/bin/bash -c "$(curl -fsSL <https://gitee.com/ineo6/homebrew-install/raw/master/install.sh>)"`
 
 ## zsh + oh-my-zsh + zplug
 
