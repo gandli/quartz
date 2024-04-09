@@ -7,6 +7,7 @@ tags:
   - 帆软
   - finereport
   - python
+  - JSON
 ---
 
 1. 在 <https://www.poi86.com/> 下载 [连江县](https://www.poi86.com/poi/amap/district/350122/1.html) 地图数据
