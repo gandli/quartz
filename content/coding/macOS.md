@@ -8,7 +8,7 @@ tags:
   - tmux
   - iterm2
 ---
-# `zshrc`
+## `zshrc`
 
 ```plain
 # 初始化 Powerlevel10k 即时提示符。应该放在 ~/.zshrc 的顶部附近。
