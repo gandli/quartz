@@ -13,7 +13,7 @@ tags:
  ![[Pasted image 20240409140210.png]]
 
 1. 使用Python 脚本添加中心点经纬度：
-
+ 帆软自定义geojson地图的格式：
    ![[Pasted image 20240409140655.png]]
  `350122.geojson` 修改文件名 `350122-area.json`
 
@@ -60,12 +60,12 @@ tags:
   add_centers_to_geojson(source_file_path, target_file_path)
   ```
 
-![[Pasted image 20240409142455.png]]
-
 3. 加载资源
 
    1. 将JSON文件放在工程webapps\webroot\WEB-INF\assets\map\image文件夹下
    2. 在数据决策系统中，点击「管理系统>地图配置>同步地理文件」即可。
+
+![[Pasted image 20240409142455.png]]
 
 ![[截屏2024-04-09 13.02.38.png]]
 
