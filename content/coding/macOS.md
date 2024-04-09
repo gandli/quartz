@@ -64,7 +64,7 @@ killall Dock
 
 `xcode-select --install`
 
-## [[Homebrew]]
+## 安装[[Homebrew]]
 
 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
@@ -76,15 +76,15 @@ killall Dock
 
 `brew install cask`
 
-## mas
+## 安装mas
 
 `brew install mas`
 
-## raycast
+## 安装raycast
 
 `brew install --cask raycast`
 
-## zsh + starship ~~oh-my-zsh~~ + zplug
+## 安装zsh + starship ~~oh-my-zsh~~ + zplug
 
 ```bash
 brew install zsh gawk git zplug
@@ -92,34 +92,33 @@ brew install zsh gawk git zplug
 brew install starship
 ```
 
-## iterm2
+## 安装iterm2
 
 `brew install --cask iterm2`
 
-## tmux
+## 安装tmux
 
 `brew install tmux`
 
-## vim
+## 安装vim
 
 `brew install vim`
 
-## zoxide、fzf
+## 安装zoxide、fzf
 
 `brew install zoxide fzf`
 
-## jenv
+## 安装jenv
 
 `brew install --cask homebrew/cask-versions/zulu11 homebrew/cask-versions/zulu13 homebrew/cask-versions/zulu15 homebrew/cask-versions/zulu17 homebrew/cask-versions/zulu21 homebrew/cask-versions/zulu7 homebrew/cask-versions/zulu8 zulu`
 
-## fnm
+## 安装fnm
 
+## 安装pyenv
 
-## pyenv
+## 安装rust
 
-
-## rust
-
+`brew install rustup-init`
 
 ## `zshrc`
 
