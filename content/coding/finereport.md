@@ -58,13 +58,14 @@ tags:
   target_file_path = "350122-modified-area.json"
   add_centers_to_geojson(source_file_path, target_file_path)
   ```
+
 ![[Pasted image 20240409142455.png]]
 
 3. 加载资源
 
-1. 将JSON文件放在工程webapps\webroot\WEB-INF\assets\map\image文件夹下
-2. 在数据决策系统中，点击「管理系统>地图配置>同步地理文件」即可。
-3. 
+   1. 将JSON文件放在工程webapps\webroot\WEB-INF\assets\map\image文件夹下
+   2. 在数据决策系统中，点击「管理系统>地图配置>同步地理文件」即可。
+
 ![[截屏2024-04-09 13.02.38.png]]
 
 参考：[帆软的文档](https://help.fanruan.com/finereport/doc-view-2110.html)
