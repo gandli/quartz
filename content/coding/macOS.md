@@ -108,6 +108,19 @@ brew install starship
 
 `brew install zoxide fzf`
 
+## jenv
+
+`brew install --cask homebrew/cask-versions/zulu11 homebrew/cask-versions/zulu13 homebrew/cask-versions/zulu15 homebrew/cask-versions/zulu17 homebrew/cask-versions/zulu21 homebrew/cask-versions/zulu7 homebrew/cask-versions/zulu8 zulu`
+
+## fnm
+
+
+## pyenv
+
+
+## rust
+
+
 ## `zshrc`
 
 `vim ~/.zshrc`
