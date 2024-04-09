@@ -11,9 +11,29 @@ tags:
 ## 清空`dock`
 
 ```bash
-defaults delete com.apple.dock persistent-apps
+defaults delete com.apple.dock persistent-apps # 包含启动台等图标
 defaults delete com.apple.dock persistent-others
 killall Dock
+```
+
+## 取消 4 位数密码限制
+
+`pwpolicy -clearaccountpolicies`
+
+## 程序坞自动隐藏加速
+
+```bash
+# 设置启动坞动画时间设置为 0.5 秒 
+defaults write com.apple.dock autohide-time-modifier -float 0.5 && killall Dock
+
+# 设置启动坞响应时间最短
+defaults write com.apple.dock autohide-delay -int 0 && killall Dock
+
+# 恢复启动坞默认动画时间
+defaults delete com.apple.dock autohide-time-modifier && killall Dock
+
+# 恢复默认启动坞响应时间
+defaults delete com.apple.Dock autohide-delay && killall Dock
 ```
 
 ## [[Homebrew]]
