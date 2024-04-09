@@ -120,15 +120,15 @@ brew install starship
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
-plain # 📦 加载 zplug 插件管理器
+# 📦 加载 zplug 插件管理器
 source ~/.zplug/init.zsh
 
-plain # 🔧 历史记录配置
+# 🔧 历史记录配置
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
-plain # 🚀 zplug 插件列表
+# 🚀 zplug 插件列表
 # zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug "zsh-users/zsh-completions"
@@ -143,7 +143,7 @@ zplug "lib/completion", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "b4b4r07/enhancd", use:init.sh
 
-plain # 如果还有未安装的包，则安装它们
+# 如果还有未安装的包，则安装它们
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -154,19 +154,22 @@ if ! zplug check --verbose; then
 fi
 zplug load
 
-plain # 自定义提示符，请运行 `p10k configure` 或编辑 ~/.p10k.zsh。
+# 自定义提示符，请运行 `p10k configure` 或编辑 ~/.p10k.zsh。
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-plain # 🐍 pyenv 环境变量配置
+# 🐍 pyenv 环境变量配置
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-plain # 🌌 Starship 提示符初始化
+# 🌌 Starship 提示符初始化
 eval "$(starship init zsh)"
 
-plain # 📂 zoxide 目录跳转
+# 📂 zoxide 目录跳转
 eval "$(zoxide init zsh)"
+
+# 设置fzf键绑定和模糊补全
+eval "$(fzf --zsh)"
 
 # 📦 fnm Node.js 版本管理
 eval "$(fnm env --use-on-cd)"
