@@ -91,3 +91,4 @@ if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ]; 
     fi
 fi
 ```
+## [[Homebrew]]
