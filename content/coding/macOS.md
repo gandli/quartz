@@ -8,6 +8,15 @@ tags:
   - tmux
   - iterm2
 ---
+
+## Homebrew 
+
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+## zsh + oh-my-zsh + zplug
+
+`brew install zsh gawk git oh-my-zsh zplug`
+
 ## `zshrc`
 
 ```plain
