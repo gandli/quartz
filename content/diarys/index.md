@@ -1,4 +1,4 @@
 ---
-title: 日记
+title: Diarys
 ---
 
