@@ -75,15 +75,19 @@ killall Dock
 
 `brew install cask`
 
+## mas
+
+`brew install mas`
+
 ## raycast
 
 `brew install --cask raycast`
 
-## zsh + oh-my-zsh + zplug
+## zsh + starship ~oh-my-zsh~ + zplug
 
 ```bash
 brew install zsh gawk git zplug
-sh -c "$(curl -fsSL <https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh>)"
+# sh -c "$(curl -fsSL <https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh>)"
 ```
 
 ## starship
