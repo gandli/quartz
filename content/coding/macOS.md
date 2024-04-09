@@ -37,6 +37,7 @@ defaults delete com.apple.Dock autohide-delay && killall Dock
 ```
 
 ## 启动台自定义行和列
+
 ```bash
 # 设置列数
 defaults write com.apple.dock springboard-columns -int 7
@@ -98,8 +99,12 @@ brew install starship
 ## tmux
 
 `brew install tmux`
+## vim
+
+`brew install vim`
 
 ## `zshrc`
+`vim ~/.zshrc`
 
    plain ```plain
     # 初始化 Powerlevel10k 即时提示符。应该放在 ~/.zshrc 的顶部附近。
