@@ -196,6 +196,7 @@ if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ]; 
         tmux attach-session -t mySession
     fi
 fi
+
 # jenv
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)" 
