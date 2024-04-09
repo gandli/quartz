@@ -250,8 +250,8 @@ fpath=(
   $fpath
 )
 # Hishtory Config:
-export PATH="$PATH:~/.hishtory"
-source ~/.hishtory/config.zsh
+export PATH="$PATH:/Users/user/.hishtory"
+source /Users/user/.hishtory/config.zsh
 # atuin
 eval "$(atuin init zsh)"
 ```
