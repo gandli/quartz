@@ -15,7 +15,7 @@ tags:
     ```
 
 2. 创作内容
-  在`content`目录下创建md文件
+  在`content`目录下创建 md 文件
 
     ```markdown
     ---
@@ -46,7 +46,7 @@ tags:
     npx quartz update
     ```
 
-6. 添加rss（可选）
+6. 添加 rss（可选）
     `quartz.layout.ts`
 
     ```ts

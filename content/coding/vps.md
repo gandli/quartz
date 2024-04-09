@@ -49,7 +49,7 @@ wget -O /usr/bin/jq https://github.com/jqlang/jq/releases/download/jq-1.7.1/jq-l
 jq --version
 ```
 
-## 安装curl
+## 安装 curl
 
 `curl` 是一个常用的命令行工具，用于发送请求。安装方法如下：
 
