@@ -18,7 +18,7 @@ export default ((opts?: Options) => {
         <hr />
         <p>
           {i18n(cfg.locale).components.footer.createdWith}{" "}
-          <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a> © {year} ,  <a href="https://www.cloudflare.com/zh-cn/" >cloudflare</a> 驱动
+          <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a> © {year} , Powered by  <a href="https://www.cloudflare.com/zh-cn/" >cloudflare</a> 
         </p>
         <ul>
           {Object.entries(links).map(([text, link]) => (
