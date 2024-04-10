@@ -9,8 +9,7 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       GitHub: "https://github.com/gandli/quartz",
       // "Discord Community": "https://discord.gg/cRFFHYye7t",
-      "RSS": "https://blog.chenxuexin.com/index.xml",
-      "cloudflare": "https://www.cloudflare.com/zh-cn/"
+      "RSS": "https://blog.chenxuexin.com/index.xml"
     },
   }),
 }
