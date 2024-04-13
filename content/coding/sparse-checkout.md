@@ -9,6 +9,8 @@ tags:
   - bootstrap.sh
 ---
 
+![[2024-04-14-02-15-10.png]]
+
 参考文章：[Bring your monorepo down to size with sparse-checkout](https://github.blog/2020-01-17-bring-your-monorepo-down-to-size-with-sparse-checkout/)
 
 1. 本地已有仓库
