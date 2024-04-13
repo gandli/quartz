@@ -22,6 +22,7 @@
    `npx @lint-md/cli content/**/* --fix && git add . && npx czg ai && git push`
 
 5. `sparse-checkout` 和 `bootstrap.sh`
+   使用稀疏模式检出 `content templates quartz`
 
    ```bash
    chmod +x ./bootstrap.sh
