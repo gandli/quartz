@@ -10,10 +10,7 @@ TEAM=$1
 
 case $TEAM in
 "content")
-	FOLDERS="content"
-	;;
-"templates")
-	FOLDERS="templates"
+	FOLDERS="content templates quartz"
 	;;
 *)
 	die "please specify a valid team"
