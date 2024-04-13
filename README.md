@@ -35,3 +35,9 @@
    git sparse-checkout disable
    git pull
    ```
+
+6. 新的提交方式
+
+   ```bash
+   npx quartz update &&  npm run format && git add . && npx czg ai && git push
+   ```
