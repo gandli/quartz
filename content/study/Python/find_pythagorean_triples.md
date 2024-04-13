@@ -5,6 +5,7 @@ tags:
   - 勾股数
   - python
 ---
+
 ```python
  def find_pythagorean_triples():
     results = []

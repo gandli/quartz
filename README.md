@@ -27,3 +27,10 @@
    chmod +x ./bootstrap.sh
    ./bootstrap.sh content
    ```
+
+   改变注意，不使用稀疏模式
+
+   ```bash
+   git sparse-checkout disable
+   git pull
+   ```

@@ -5,6 +5,7 @@ tags:
   - python
   - 卷烟
 ---
+
 ```python
 import requests
 import json
@@ -75,34 +76,34 @@ print(f"所有产品详细信息已保存到：{json_filename}和{xlsx_filename}
 
 ```json
 {
-    "productName": "品规名称",
-    "packType": "包装形式（条盒/软盒）",
-    "brandName": "品牌名称(Rave)",
-    "supplyName": "所属公司",
-    "stripCode": "条装条码",
-    "tarQty": "盒标焦油",
-    "nicotineQty": "盒标烟碱",
-    "boxCoQty": "盒标一氧化碳",
-    "tbcLength": "烟支长度",
-    "factoryText": "生产厂",
-    "isLocSale": "销售状态",
-    "supplyFully": "销售属性",
-    "specsType": "创新品类",
-    "productionStatus": "生产状态",
-    "makeType": "工艺类型（混合型）",
-    "priceType": "价类（五类烟）",
-    "stripPackQty": "条盒数",
-    "packQty": "盒支数",
-    "wholeSalePrice": "批发价",
-    "retailPrice": "零售指导价",
-    "saleBeginDate": "上市时间",
-    "updateDate": "更新日期",
-    "enProductName": "英文名称",
-    "packCode": "盒装条码",
-    "productSpec": "卷烟规格",
-    "imgRemark": "图片描述",
-    "packaModel": "包装机型",
-    "machineMarkFeature": "机型标记特征",
-    "factoryMarkFeature": "生产厂标记特征"
+  "productName": "品规名称",
+  "packType": "包装形式（条盒/软盒）",
+  "brandName": "品牌名称(Rave)",
+  "supplyName": "所属公司",
+  "stripCode": "条装条码",
+  "tarQty": "盒标焦油",
+  "nicotineQty": "盒标烟碱",
+  "boxCoQty": "盒标一氧化碳",
+  "tbcLength": "烟支长度",
+  "factoryText": "生产厂",
+  "isLocSale": "销售状态",
+  "supplyFully": "销售属性",
+  "specsType": "创新品类",
+  "productionStatus": "生产状态",
+  "makeType": "工艺类型（混合型）",
+  "priceType": "价类（五类烟）",
+  "stripPackQty": "条盒数",
+  "packQty": "盒支数",
+  "wholeSalePrice": "批发价",
+  "retailPrice": "零售指导价",
+  "saleBeginDate": "上市时间",
+  "updateDate": "更新日期",
+  "enProductName": "英文名称",
+  "packCode": "盒装条码",
+  "productSpec": "卷烟规格",
+  "imgRemark": "图片描述",
+  "packaModel": "包装机型",
+  "machineMarkFeature": "机型标记特征",
+  "factoryMarkFeature": "生产厂标记特征"
 }
 ```

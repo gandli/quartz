@@ -17,6 +17,7 @@ tags:
   - rust
   - raycast
 ---
+
 ## 系统设置
 
 ### 清空`dock`
@@ -34,7 +35,7 @@ killall Dock
 ### 程序坞自动隐藏加速
 
 ```bash
-# 设置启动坞动画时间设置为 0.5 秒 
+# 设置启动坞动画时间设置为 0.5 秒
 defaults write com.apple.dock autohide-time-modifier -float 0.5 && killall Dock
 
 # 设置启动坞响应时间最短
@@ -158,15 +159,15 @@ cd rime-auto-deploy
 #if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
- 
+
 # 🚀 加载 zplug，一个社区驱动的插件管理器
 source ~/.zplug/init.zsh
- 
+
 # 🔧 历史记录配置
 HISTSIZE=10000  # 历史记录大小
 SAVEHIST=10000  # 保存的历史记录数量
 HISTFILE=~/.zsh_history  # 历史记录文件路径
- 
+
 # 🎨 zplug 插件
 # zplug "romkatv/powerlevel10k", as:theme, depth:1  # 主题配置，当前为注释状态
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'  # zplug 自管理
@@ -181,7 +182,7 @@ zplug "plugins/extract", from:oh-my-zsh  # 解压插件
 zplug "lib/completion", from:oh-my-zsh  # 补全库
 zplug "plugins/sudo", from:oh-my-zsh  # sudo 插件
 zplug "b4b4r07/enhancd", use:init.sh  # 增强型cd命令
- 
+
 # 如果有尚未安装的包，进行安装
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -192,27 +193,27 @@ if ! zplug check --verbose; then
     fi
 fi
 zplug load
- 
+
 # 自定义提示符，请运行 `p10k configure` 或编辑 ~/.p10k.zsh。
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
- 
+
 # 🐍 设置 pyenv 环境变量
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
- 
+
 # 🚀 配置 starship 提示符
 eval "$(starship init zsh)"
- 
+
 # 📁 使用 zoxide 进行目录跳转
 eval "$(zoxide init zsh)"
- 
+
 # 📦 配置 fnm (Fast Node Manager)
 eval "$(fnm env --use-on-cd)"
- 
+
 # 更新 PATH 环境变量以包含 homebrew 安装的 curl
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
- 
+
 # 📦 配置 pnpm 环境变量
 export PNPM_HOME="~/Library/pnpm"
 case ":$PATH:" in
@@ -220,7 +221,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm 配置结束
- 
+
 # 🖥️ Tmux 会话管理：若当前终端为 Apple Terminal 或 iTerm2，则尝试连接或创建名为 mySession 的会话
 if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ]; then
     # 首先检查是否有任何会话被附加
@@ -236,11 +237,11 @@ if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ]; 
         fi
     fi
 fi
- 
+
 # 📦 配置 jenv，Java 版本管理器
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
- 
+
 # 🔧 配置 zsh 补全路径
 fpath=(
   /opt/homebrew/share/zsh-completions(N-/)  # Homebrew 安装的 zsh 补全

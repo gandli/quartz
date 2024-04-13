@@ -13,32 +13,32 @@ tags:
 ---
 
 1. 本地
- 首先，在本地生成 SSH 公钥，并将其复制到 VPS 上：
+   首先，在本地生成 SSH 公钥，并将其复制到 VPS 上：
 
- ```bash
- ssh-keygen -y -f ~/.ssh/private_key > ~/.ssh/private_key.pub
- ssh-copy-id username@your_vps_ip
- ```
+```bash
+ssh-keygen -y -f ~/.ssh/private_key > ~/.ssh/private_key.pub
+ssh-copy-id username@your_vps_ip
+```
 
 2. VPS
- 登录到您的 VPS 后，执行以下命令修改 SSH 配置，以启用 SSH 密钥认证并禁用密码登录：
+   登录到您的 VPS 后，执行以下命令修改 SSH 配置，以启用 SSH 密钥认证并禁用密码登录：
 
- ```bash
- sudo sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
- sudo sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
- sudo sed -i 's/#ChallengeResponseAuthentication yes/ChallengeResponseAuthentication no/' /etc/ssh/sshd_config
- sudo sed -i 's/UsePAM yes/UsePAM no/' /etc/ssh/sshd_config
- sudo systemctl restart sshd
- ```
+```bash
+sudo sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
+sudo sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+sudo sed -i 's/#ChallengeResponseAuthentication yes/ChallengeResponseAuthentication no/' /etc/ssh/sshd_config
+sudo sed -i 's/UsePAM yes/UsePAM no/' /etc/ssh/sshd_config
+sudo systemctl restart sshd
+```
 
 3. 进一步禁用 `root` ，创建 `user`
 
- ```bash
- useradd -m user && echo "user:password" | chpasswd
- usermod -aG sudo user
- sed -i 's/#PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config || sed -i 's/PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
- systemctl restart sshd
- ```
+```bash
+useradd -m user && echo "user:password" | chpasswd
+usermod -aG sudo user
+sed -i 's/#PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config || sed -i 's/PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
+systemctl restart sshd
+```
 
 ## 安装`jq`
 
@@ -66,4 +66,4 @@ Docker 是一个开放平台，用于开发、交付和运行应用。通过以�
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh ./get-docker.sh
 docker -v
-```  
+```

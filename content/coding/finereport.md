@@ -12,55 +12,55 @@ tags:
 
 1. 在 <https://www.poi86.com/> (这个 POI 数据网站似乎国内不能访问。) 下载[连江县](https://www.poi86.com/poi/amap/district/350122/1.html)地图数据
    连江县边界 _350122_GeoJSON_(poi86.com)。zip
- ！[[Pasted image 20240409140210.png]]
+   ！[[Pasted image 20240409140210.png]]
 
 1. 使用 Python 脚本添加中心点经纬度：
- 帆软自定义 geojson 地图的格式：
+   帆软自定义 geojson 地图的格式：
    ！[[Pasted image 20240409140655.png]]
- `350122.geojson` 修改文件名 `350122-area.json`
+   `350122.geojson` 修改文件名 `350122-area.json`
 
-  ```python
+```python
 
-  import json
+import json
 
-  def calculate_center(coordinates):
-  """
-  计算多边形或多重多边形的中心点。
-  对于多边形，计算所有点的平均值。
-  对于多重多边形，对所有多边形执行相同的操作。
-  """
-  total_x, total_y, count = 0, 0, 0
-  for part in coordinates:
-   for polygon in part:
-    for point in polygon:
-     total_x += point[0]
-     total_y += point[1]
-     count += 1
-  return [total_x / count, total_y / count] if count else None
+def calculate_center(coordinates):
+"""
+计算多边形或多重多边形的中心点。
+对于多边形，计算所有点的平均值。
+对于多重多边形，对所有多边形执行相同的操作。
+"""
+total_x, total_y, count = 0, 0, 0
+for part in coordinates:
+ for polygon in part:
+  for point in polygon:
+   total_x += point[0]
+   total_y += point[1]
+   count += 1
+return [total_x / count, total_y / count] if count else None
 
-  def add_centers_to_geojson(source_file_path, target_file_path):
-  """
-  为 GeoJSON 文件中的每个要素添加中心点。
-  """
-  with open(source_file_path, encoding="utf-8") as f:
-   geo_data = json.load(f)
+def add_centers_to_geojson(source_file_path, target_file_path):
+"""
+为 GeoJSON 文件中的每个要素添加中心点。
+"""
+with open(source_file_path, encoding="utf-8") as f:
+ geo_data = json.load(f)
 
-  for feature in geo_data["features"]:
-   center = calculate_center(feature["geometry"]["coordinates"])
-   if center:
-    feature["properties"]["center"] = center
+for feature in geo_data["features"]:
+ center = calculate_center(feature["geometry"]["coordinates"])
+ if center:
+  feature["properties"]["center"] = center
 
-  with open(target_file_path, "w", encoding="utf-8") as f:
-   json.dump(geo_data, f, ensure_ascii=False, indent=4)
+with open(target_file_path, "w", encoding="utf-8") as f:
+ json.dump(geo_data, f, ensure_ascii=False, indent=4)
 
-  print(f"修改后的 GeoJSON 文件已保存至: {target_file_path}")
+print(f"修改后的 GeoJSON 文件已保存至: {target_file_path}")
 
-  # 使用函数处理文件
+# 使用函数处理文件
 
-  source_file_path = "350122-area.json"
-  target_file_path = "350122-modified-area.json"
-  add_centers_to_geojson(source_file_path, target_file_path)
-  ```
+source_file_path = "350122-area.json"
+target_file_path = "350122-modified-area.json"
+add_centers_to_geojson(source_file_path, target_file_path)
+```
 
 3. 加载资源
 
