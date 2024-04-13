@@ -9,6 +9,8 @@ tags:
   - bootstrap.sh
 ---
 
+参考文章：[Bring your monorepo down to size with sparse-checkout](https://github.blog/2020-01-17-bring-your-monorepo-down-to-size-with-sparse-checkout/)
+
 1. 本地已有仓库
 
    ```bash
