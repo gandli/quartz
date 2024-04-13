@@ -18,5 +18,12 @@
     npx quartz update
     ```
 
-4. 格式化 md 文件 ，提交 commit message 并 git push
+4. 格式化 md 文件，提交 commit message 并 git push
    `npx @lint-md/cli content/**/* --fix && git add . && npx czg ai && git push`
+
+5. `sparse-checkout` 和 `bootstrap.sh`
+
+   ```bash
+   chmod +x ./bootstrap.sh
+   ./bootstrap.sh content
+   ```
