@@ -9,7 +9,7 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       GitHub: "https://github.com/gandli/quartz",
       // "Discord Community": "https://discord.gg/cRFFHYye7t",
-      "RSS": "https://blog.chenxuexin.com/index.xml"
+      RSS: "https://blog.chenxuexin.com/index.xml",
     },
   }),
 }
@@ -21,7 +21,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
-    Component.Comments()
+    Component.Comments(),
   ],
   left: [
     Component.PageTitle(),

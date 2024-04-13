@@ -12,6 +12,9 @@ case $TEAM in
 "content")
 	FOLDERS="content"
 	;;
+"templates")
+	FOLDERS="templates"
+	;;
 *)
 	die "please specify a valid team"
 	;;

@@ -1,7 +1,6 @@
 ---
-title: {{date}}
+title: { { date } }
 draft: false
 tags:
   - diary
 ---
- 
