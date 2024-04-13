@@ -58,3 +58,32 @@ tags:
    ```
 
    如果检出多个目录，使用`git sparse-checkout set client/android web/browser`
+
+3. 使用脚本 `bootstrap.sh`
+
+   ```bash
+   #!/bin/bash -e
+
+   SCRIPTNAME=$0
+   die() {
+   echo "$SCRIPTNAME: $1"
+   exit 1
+   }
+
+   TEAM=$1
+
+   case $TEAM in
+   "content")
+   FOLDERS="content templates quartz"
+   ;;
+   *)
+   die "please specify a valid team"
+   ;;
+   esac
+
+   echo "Running 'git sparse-checkout init --cone'"
+   git sparse-checkout init --cone
+
+   echo "Running 'git sparse-checkout set $FOLDERS'"
+   git sparse-checkout set $FOLDERS
+   ```
