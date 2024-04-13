@@ -3,6 +3,8 @@ title: git 的稀疏检出和部分克隆
 draft: false
 tags:
   - git
+  - 稀疏检出
+  - 部分克隆
   - sparse-checkout
   - bootstrap.sh
 ---
