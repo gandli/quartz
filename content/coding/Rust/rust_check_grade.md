@@ -2,6 +2,7 @@
 title: Rust中的模式匹配：简洁地评定成绩
 draft: false
 tags:
+  - rust
 ---
 
 ![[2024-04-14-21-28-17.png]]
