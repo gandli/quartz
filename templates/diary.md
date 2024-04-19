@@ -1,5 +1,5 @@
 ---
-title: { { DATE:YYYY-MM-DD-dddd HH:mm:ss } }
+title:
 draft: false
 tags:
   - diary
