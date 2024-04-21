@@ -1,4 +1,4 @@
 ---
-title:
-date: 2024-04-21
+title: 
+date: ""
 ---
