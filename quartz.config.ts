@@ -17,7 +17,7 @@ const config: QuartzConfig = {
     locale: "zh-CN",
     baseUrl: "blog.chenxuexin.com",
     ignorePatterns: ["private", "templates", ".obsidian"],
-    defaultDateType: "modified", //modified、created
+    defaultDateType: "created",
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
@@ -54,7 +54,7 @@ const config: QuartzConfig = {
     transformers: [
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
-        priority: ["git", "frontmatter", "filesystem"],
+        priority: ["frontmatter", "git", "filesystem"],
       }),
       Plugin.Latex({ renderEngine: "katex" }),
       Plugin.SyntaxHighlighting({
