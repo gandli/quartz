@@ -4,6 +4,11 @@ draft: false
 tags: 
 date: ""
 ---
-## exeinfo
+## 查壳
 
-## IDA
+软件：EXEInfoPE、PEID、StudyPE+、DIE等
+
+## 脱壳
+
+
+## IDA Pro
