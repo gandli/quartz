@@ -8,7 +8,9 @@ date: ""
 
 软件：EXEInfoPE、PEID、StudyPE+、DIE等
 
-## 脱壳
+## 常用
+
+windbg，x32dbg，x64dbg，winhex，IDA,OD
 
 
 ## IDA Pro
