@@ -149,7 +149,7 @@ date: 2024-04-26
 ```python
 key = "gofn\×84`AZ\x7f\x82\×8cZz\x80\x90\x80\x93g|x8a¤" 
 flag="'"
-Shift = 1
+shift = 1
 
 for i in range（0,len（key））：
 	flag = flag + chr（ord（key［i］）-shift）
