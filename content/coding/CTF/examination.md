@@ -140,26 +140,28 @@ date: 2024-04-26
 
 
    max_prod, password = max_product(matrix)
-   print("最大乘积:", max_prod)
-   print("密码串:", password)
+   print("最大乘积：", max_prod)
+   print("密码串：", password)
    ```
 
 5. 密码学，凯撒密码
-   ```
-   来抓我呀~我一步就是2米远，你抓不着我~
+
+   ```plaintext
+   来抓我呀~我一步就是 2 米远，你抓不着我~
    gofn\x84`AZ\x7f\x82\x8cZz\x80\x90\x80\x93g\x8a¤
    ```
 
-```python
-key = "gofn\×84`AZ\x7f\x82\×8cZz\x80\x90\x80\x93g|x8a¤"
-flag="'"
-shift = 1
+   ```python
+    key = "gofn\×84`AZ\x7f\x82\×8cZz\x80\x90\x80\x93g|x8a¤"
+    flag="'"
+    shift = 1
 
-for i in range（0,len（key））：
-	flag = flag + chr（ord（key［i］）-shift）
-	shift= shift+2
-print（flag）
-```
+    for i in range (0,len (key)):
+        flag = flag + chr(ord(key［i］)-shift)
+        shift= shift+2
+
+    print（flag）
+   ```
 
 6. 逆向题
 
@@ -169,8 +171,8 @@ print（flag）
    key =［ 0x98,0x9E,0x93,0x99,0xAD,0x7B,0xA0,0xA0,0x97,0xA4,0x7E,0xA1,0xA0,0x99,0xA1,0x9E,Ox9B,0x93,0x91,0x84,0×77,OxAF］
    flag = ""
 
-   for j in key：
-   	flag += chr(j-50）
+   for j in key:
+       flag += chr(j-50）
 
    print(flag)
    ```
