@@ -1,9 +1,10 @@
 ---
 title: circular list
 draft: false
-tags: 
+tags:
 date: ""
 ---
+
 在 Python 中，你可以使用多种方式来遍历或。下面是一些常见的方法：
 
 1. **使用 `for` 循环**：
