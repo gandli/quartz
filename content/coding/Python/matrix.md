@@ -183,14 +183,17 @@ matrix = generate_matrix(5)
 
 ```python
 def generate_matrix(n):
-	result = []
-	return result
+    return [[i + 1 + n * j for i in range(n)] for j in range(n)]
+
+
 # 生成矩阵
 matrix = generate_matrix(5)
 
 # 打印矩阵
 for row in matrix:
-    print(row)
+    print("[", end="")
+    print(" ".join(map(str, row)), end="")
+    print("]")
 ```
 
 ```python
