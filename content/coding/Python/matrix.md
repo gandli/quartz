@@ -82,13 +82,24 @@ def generate_matrix(n):
 
 # 第三方库
 
-### `arange` 和 `reshape`
+### `np` 的 `arange` 和 `reshape`
 
 ```python
-# numpy 库
+# numpy 库 arange、reshape
 import numpy as np
 
 
 def generate_matrix(n):
     return np.arange(1, n * n + 1).reshape(n, n)
+```
+
+### `np` 的 `random.randint`
+
+```python
+# numpy 库 random.randint
+import numpy as np
+
+
+def generate_matrix(n):
+	return np.random.randint(1,n*n,size=(n,n))
 ```
