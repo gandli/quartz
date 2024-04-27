@@ -1,7 +1,10 @@
 ---
-title: 
+title: python 矩阵研究
 draft: false
-tags: 
+tags:
+  - python
+  - 矩阵
+  - 编程
 date: 2024-04-27
 ---
 ## 生成一个数字矩阵
@@ -16,3 +19,35 @@ for row in matrix:
 
 ```
 
+```bash
+[1, 2, 3, 4, 5]
+[6, 7, 8, 9, 10]
+[11, 12, 13, 14, 15]
+[16, 17, 18, 19, 20]
+[21, 22, 23, 24, 25]
+```
+## 写成函数
+
+```python
+def generate_matrix(n):
+    # 使用列表解析生成一个 n x n 的数字矩阵
+    result = [[i + 1 for i in range(n * j, n * (j + 1))] for j in range(n)]
+    # 返回生成的数字矩阵
+    return result
+
+
+# 调用 generate_matrix 函数生成一个 5x5 的数字矩阵
+matrix = generate_matrix(5)
+
+# 打印生成的矩阵
+for row in matrix:
+    print(row)
+```
+
+```bash
+[1, 2, 3, 4, 5]
+[6, 7, 8, 9, 10]
+[11, 12, 13, 14, 15]
+[16, 17, 18, 19, 20]
+[21, 22, 23, 24, 25]
+```
