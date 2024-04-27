@@ -9,6 +9,8 @@ date: 2024-04-27
 ---
 ## 生成一个数字矩阵
 
+### 列表推导
+
 ```python
 # 生成一个 5x5 的数字矩阵
 matrix = [[i + 1 for i in range(5 * j, 5 * (j + 1))] for j in range(5)]
@@ -225,4 +227,36 @@ matrix = generate_matrix(5)
 for row in matrix:
     print(row)
 ```
+
+### 相互转换
+
+```python
+import numpy as np
+
+# Python 列表
+python_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+# 转换为 NumPy 数组
+numpy_array = np.array(python_list)
+
+
+# 打印
+print(python_list)
+print("\n", numpy_array)
+```
+
+```python
+import numpy as np
+
+# NumPy 数组
+numpy_array = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+# 转换为 Python 列表
+python_list = numpy_array.tolist()
+
+# 打印 
+print(numpy_array)
+print("\n", python_list)
+```
+
 
