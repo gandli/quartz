@@ -345,3 +345,45 @@ print("\nNumPy 数组格式:")
 for row in formatted_np_array:
     print(row)
 ```
+
+## `range(start, stop)` 和 `np.arange(start, stop)` 
+
+`range(start, stop)` 和 `np.arange(start, stop)` 都是用来生成一个连续整数序列的，但它们来自不同的库并且有一些细微的差别。下面是它们的基本用法和取值范围的详细解释：
+
+### `range(start, stop)`
+`range()` 是 Python 内置的函数，用于生成一个不可变的序列类型，这个序列通常用于循环中。`range()` 生成的是一个迭代器，它不会立即分配内存来存储整个数列。
+
+- **start**：序列的起始值，包含在序列中。
+- **stop**：序列的结束值，不包含在序列中。
+- **step**（可选）：序列中每个数之间的间隔，默认为1。
+
+`range()` 只能用于生成整数序列。
+
+### `np.arange(start, stop, [step, dtype])`
+`np.arange()` 是 `NumPy` 库中的函数，它返回一个数组，而不是一个迭代器。这意味着 `np.arange()` 会立即分配内存来存储整个数列。
+
+- **start**：序列的起始值，包含在数组中。
+- **stop**：序列的结束值，不包含在数组中。
+- **step**（可选）：序列中每个数之间的间隔，默认为1。
+- **dtype**（可选）：数组的数据类型。如果指定，可以定义生成的数组中元素的数据类型，例如 `np.float32`。
+
+与 `range()` 不同的是，`np.arange()` 可以生成浮点数序列。这是一个重要的功能，特别是在需要非整数步长或处理数值计算时。
+
+### 示例
+
+**使用 `range()` 生成整数序列：**
+```python
+for i in range(1, 10):
+    print(i, end=' ')  # 输出 1 2 3 4 5 6 7 8 9
+```
+
+**使用 `np.arange()` 生成浮点数序列：**
+```python
+import numpy as np
+arr = np.arange(0.5, 5.5, 0.5)
+print(arr)  # 输出 [0.5 1.  1.5  2.  2.5 3.  3.5 4.  4.5 5. ]
+```
+
+选择 `range()` 还是 `np.arange()` 取决于具体的使用场景。如果你需要高性能的数组操作，特别是在科学计算中，`np.arange()` 更加适合。而对于基本的迭代需求，`range()` 更加简单且内存效率更高。
+
+
