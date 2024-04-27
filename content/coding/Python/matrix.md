@@ -155,20 +155,32 @@ matrix = generate_matrix(5)
 
 ## NumPy 数组格式和标准的 Python 列表格式
 
-```
-[1 2 3 4 5]
-[ 6  7  8  9 10]
-[11 12 13 14 15]
-[16 17 18 19 20]
-[21 22 23 24 25]
+1. 标准的 Python 列表格式
+
+```bash
+[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]]
 ```
 
-```
+```bash
 [1, 2, 3, 4, 5]
 [6, 7, 8, 9, 10]
 [11, 12, 13, 14, 15]
 [16, 17, 18, 19, 20]
 [21, 22, 23, 24, 25]
+```
+
+2. NumPy 数组格式
+
+```bash
+['[1 2 3 4 5]', '[6 7 8 9 10]', '[11 12 13 14 15]', '[16 17 18 19 20]', '[21 22 23 24 25]']
+```
+
+```bash
+[1 2 3 4 5]
+[ 6  7  8  9 10]
+[11 12 13 14 15]
+[16 17 18 19 20]
+[21 22 23 24 25]
 ```
 
 1. **NumPy 数组格式：** 当你直接打印一个 NumPy 数组时，它会以一种类似矩阵的格式输出，元素之间没有明确的分隔符，而是用空格或换行符进行分隔。这种格式更接近数学中矩阵的表示。
@@ -183,7 +195,9 @@ matrix = generate_matrix(5)
 
 ```python
 def generate_matrix(n):
-    return [[i + 1 + n * j for i in range(n)] for j in range(n)]
+    return [
+        "[" + " ".join(str(i + 1 + n * j) for i in range(n)) + "]" for j in range(n)
+    ]
 
 
 # 生成矩阵
@@ -191,9 +205,7 @@ matrix = generate_matrix(5)
 
 # 打印矩阵
 for row in matrix:
-    print("[", end="")
-    print(" ".join(map(str, row)), end="")
-    print("]")
+    print(row)
 ```
 
 ```python
@@ -213,3 +225,4 @@ matrix = generate_matrix(5)
 for row in matrix:
     print(row)
 ```
+
