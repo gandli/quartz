@@ -57,5 +57,38 @@ for row in matrix:
 ## 嵌套循环
 
 ```python
+matrix = []
+num = 1
+for i in range(5):
+    row = []
+    for j in range(5):
+        row.append(num)
+        num += 1
+    matrix.append(row)
+```
 
+```python
+def generate_matrix(n):
+    result = []
+    num = 1
+    for i in range(n):
+        row = []
+        for j in range(n):
+            row.append(num)
+            num += 1
+        result.append(row)
+    return result
+```
+
+# 第三方库
+
+### `arange` 和 `reshape`
+
+```python
+# numpy 库
+import numpy as np
+
+
+def generate_matrix(n):
+    return np.arange(1, n * n + 1).reshape(n, n)
 ```
