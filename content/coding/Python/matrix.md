@@ -14,7 +14,7 @@ date: 2024-04-27
 ```python
 # 生成一个 5x5 的数字矩阵
 matrix = [[i + 1 for i in range(5 * j, 5 * (j + 1))] for j in range(5)]
-
+# matrix = [[i + 1 + 5 * j for i in range(5)] for j in range(5)]
 # 打印矩阵
 for row in matrix:
     print(row)
@@ -34,6 +34,7 @@ for row in matrix:
 def generate_matrix(n):
     # 使用列表解析生成一个 n x n 的数字矩阵
     result = [[i + 1 for i in range(n * j, n * (j + 1))] for j in range(n)]
+    # result = [[i + 1 + n * j for i in range(n)] for j in range(n)]
     # 返回生成的数字矩阵
     return result
 
@@ -267,6 +268,9 @@ print("\n", python_list)
 ### 标准的 Python 列表格式
 
 1. 列表推导
-2. 嵌套循环
-3. 第三方库
+		```python
+		
+```
+1. 嵌套循环
+2. 第三方库
 ### NumPy 数组格式
