@@ -453,3 +453,106 @@ print(num)
 ```
 
 这些方法覆盖了大部分生成随机数的常见需求。通过使用 `random` 模块，你可以轻松实现各种随机数据生成的功能。
+
+### 使用 列表推导 生成随机的数组矩阵
+
+```python
+import random
+
+
+def generate_list_array(n, lower=1, upper=100):
+    # 为 py_list 生成随机数
+    py_list = [[random.randint(lower, upper) for _ in range(n)] for _ in range(n)]
+
+    # 为 np_array 生成随机数
+    np_array = [
+        "[" + " ".join(str(random.randint(lower, upper)) for _ in range(n)) + "]"
+        for _ in range(n)
+    ]
+
+    return py_list, np_array
+
+
+py_list, np_array = generate_list_array(5)
+
+print("标准的 Python 列表格式:")
+for row in py_list:
+    print(row)
+print("\nNumPy 数组格式:")
+for row in np_array:
+    print(row)
+```
+
+```bash
+标准的 Python 列表格式:
+[41, 29, 24, 88, 14]
+[50, 9, 28, 42, 38]
+[86, 52, 22, 79, 13]
+[59, 67, 23, 62, 85]
+[71, 7, 16, 57, 69]
+
+NumPy 数组格式:
+[46 9 66 97 24]
+[2 42 33 31 56]
+[12 20 79 48 74]
+[30 31 7 33 37]
+[69 83 19 80 96]
+```
+
+### 使用 嵌套循环 生成随机的数组矩阵
+
+```python
+import random
+
+def generate_list_array(n, lower=1, upper=100):
+    py_list = []
+    np_array = []
+
+    # 使用嵌套循环为 py_list 生成随机数
+    for i in range(n):
+        py_row = []
+        for j in range(n):
+            value = random.randint(lower, upper)
+            py_row.append(value)
+        py_list.append(py_row)
+
+    # 使用嵌套循环独立地为 np_array 生成随机数，并立即格式化为字符串
+    for i in range(n):
+        np_row = []
+        for j in range(n):
+            value = random.randint(lower, upper)
+            np_row.append(str(value))
+        formatted_row = "[" + " ".join(np_row) + "]"
+        np_array.append(formatted_row)
+
+    return py_list, np_array
+
+py_list, np_array = generate_list_array(5)
+
+print("标准的 Python 列表格式:")
+for row in py_list:
+    print(row)
+print("\nNumPy 数组格式:")
+for row in np_array:
+    print(row)
+```
+
+```bash
+标准的 Python 列表格式:
+[18, 59, 48, 68, 96]
+[39, 93, 30, 52, 58]
+[94, 25, 19, 73, 30]
+[1, 3, 24, 65, 3]
+[87, 51, 30, 81, 100]
+
+NumPy 数组格式:
+[76 12 24 86 84]
+[83 71 42 12 72]
+[72 9 86 80 51]
+[36 9 47 76 67]
+[95 50 76 61 45]
+```
+
+### 使用 np
+
+``
