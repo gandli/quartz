@@ -265,7 +265,7 @@ print("\n", python_list)
 
 ## 数值的随机性
 
-### 标准的 Python 列表格式
+### 标准的 Python 列表格式和NumPy 数组格式
 
 1. 列表推导
 ```python
@@ -291,4 +291,4 @@ for row in np_array:
 ```
 1. 嵌套循环
 2. 第三方库
-### NumPy 数组格式
+
