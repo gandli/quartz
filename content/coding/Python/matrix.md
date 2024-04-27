@@ -268,8 +268,26 @@ print("\n", python_list)
 ### 标准的 Python 列表格式
 
 1. 列表推导
-		```python
-		
+```python
+# 列表推导
+def generate_list_array(n):
+    py_list = [[i + 1 + n * j for i in range(n)] for j in range(n)]
+
+    np_array = [
+        "[" + " ".join(str(i + 1 + n * j) for i in range(n)) + "]" for j in range(n)
+    ]
+
+    return py_list, np_array
+
+
+py_list, np_array = generate_list_array(5)
+
+print("标准的 Python 列表格式:")
+for row in py_list:
+    print(row)
+print("\nNumPy 数组格式:")
+for row in np_array:
+    print(row)
 ```
 1. 嵌套循环
 2. 第三方库
