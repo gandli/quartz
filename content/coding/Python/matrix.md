@@ -79,6 +79,7 @@ def generate_matrix(n):
         result.append(row)
     return result
     
+matrix = generate_matrix(5)    
 ```
 
 # 第三方库
@@ -92,8 +93,19 @@ import numpy as np
 
 def generate_matrix(n):
     return np.arange(1, n * n + 1).reshape(n, n)
+    
+matrix = generate_matrix(5) 
 ```
 
+输出：
+
+```bash
+[1 2 3 4 5]
+[ 6  7  8  9 10]
+[11 12 13 14 15]
+[16 17 18 19 20]
+[21 22 23 24 25]
+```
 ### `np` 的 `random.randint`
 
 ```python
@@ -103,4 +115,40 @@ import numpy as np
 
 def generate_matrix(n):
 	return np.random.randint(1,n*n,size=(n,n))
+	    
+matrix = generate_matrix(5) 
+```
+
+输出：
+
+```bash
+[11 11 23 10  5]
+[10  4  4 10 10]
+[11  6  9  8  4]
+[24 11  4 12 16]
+[ 3  7 14 17 24]
+```
+
+这里增加 `.tolist()`，可以让生成的矩阵以二维列表的形式打印，每行作为一个单独的列表
+
+```python
+# numpy 库 arange、reshape
+import numpy as np
+
+
+def generate_matrix(n):
+    return np.arange(1, n * n + 1).reshape(n, n).tolist()
+    
+matrix = generate_matrix(5) 
+```
+
+```python
+# numpy 库 random.randint
+import numpy as np
+
+
+def generate_matrix(n):
+	return np.random.randint(1,n*n,size=(n,n)).tolist()
+	    
+matrix = generate_matrix(5) 
 ```
