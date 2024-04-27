@@ -179,4 +179,34 @@ matrix = generate_matrix(5)
     
     示例：`[[1, 2, 3], [4, 5, 6], [7, 8, 9]]`
 
-## 使用 列表
+## 使用 列表推导和嵌套循环生成 NumPy 数组格式
+
+```python
+def generate_matrix(n):
+	result = []
+	return result
+# 生成矩阵
+matrix = generate_matrix(5)
+
+# 打印矩阵
+for row in matrix:
+    print(row)
+```
+
+```python
+def generate_matrix(n):
+    result = []
+    count = 1
+    for i in range(n):
+        row = '[' + ' '.join(str(count + j) for j in range(n)) + ']'
+        count += n
+        result.append(row)
+    return result
+
+# 生成矩阵
+matrix = generate_matrix(5)
+
+# 打印矩阵
+for row in matrix:
+    print(row)
+```
