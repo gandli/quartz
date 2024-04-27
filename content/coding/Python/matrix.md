@@ -483,6 +483,8 @@ for row in np_array:
     print(row)
 ```
 
+打印：
+
 ```bash
 标准的 Python 列表格式:
 [41, 29, 24, 88, 14]
@@ -537,6 +539,8 @@ for row in np_array:
     print(row)
 ```
 
+打印：
+
 ```bash
 标准的 Python 列表格式:
 [18, 59, 48, 68, 96]
@@ -553,6 +557,47 @@ NumPy 数组格式:
 [95 50 76 61 45]
 ```
 
-### 使用 np
+### 使用 `numpy` 生成随机的数组矩阵
 
-``
+```python
+import numpy as np
+
+def generate_list_array(n, lower=1, upper=100):
+    # 使用 NumPy 生成 py_list 的随机矩阵
+    py_array = np.random.randint(lower, upper + 1, size=(n, n))
+    py_list = py_array.tolist()
+
+    # 使用 NumPy 生成 np_array 的随机矩阵，并格式化为字符串列表
+    np_random_array = np.random.randint(lower, upper + 1, size=(n, n))
+    np_array = ["[" + " ".join(map(str, row)) + "]" for row in np_random_array]
+
+    return py_list, np_array
+
+py_list, np_array = generate_list_array(5)
+
+print("标准的 Python 列表格式:")
+for row in py_list:
+    print(row)
+print("\nNumPy 数组格式:")
+for row in np_array:
+    print(row)
+```
+
+打印：
+
+```bash
+标准的 Python 列表格式:
+[72, 68, 84, 89, 16]
+[84, 91, 30, 59, 26]
+[4, 46, 43, 73, 60]
+[18, 56, 66, 61, 77]
+[94, 24, 54, 64, 6]
+
+NumPy 数组格式:
+[50 72 46 78 87]
+[15 62 84 44 73]
+[74 1 47 90 22]
+[41 32 17 21 68]
+[9 83 82 39 71]
+```
+
