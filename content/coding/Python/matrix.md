@@ -290,5 +290,58 @@ for row in np_array:
     print(row)
 ```
 1. 嵌套循环
-2. 第三方库
+```python
+# 嵌套循环
+def generate_list_array(n):
+    py_list = []
+    np_array = []
 
+    for i in range(n):
+        py_row = []
+        np_row = []
+        for j in range(n):
+            # 直接计算当前元素的值并添加到行列表中
+            value = i * n + j + 1
+            py_row.append(value)
+            np_row.append(str(value))
+        py_list.append(py_row)
+        np_array.append("[" + " ".join(np_row) + "]")
+    return py_list, np_array
+
+
+py_list, np_array = generate_list_array(5)
+
+print("标准的 Python 列表格式:")
+for row in py_list:
+    print(row)
+print("\nNumPy 数组格式:")
+for row in np_array:
+    print(row)
+```
+3. 第三方库
+
+```python
+import numpy as np
+
+def generate_list_array(n):
+    # 使用 NumPy 的 arange 函数生成连续元素，并调整形状为 n x n
+    np_array = np.arange(1, n*n + 1).reshape(n, n)
+
+    # 将 NumPy 数组转换为 Python 列表，以符合原函数的返回类型
+    py_list = np_array.tolist()
+
+    # 格式化为 NumPy 数组格式的字符串（模拟你的原函数输出）
+    formatted_np_array = ["[" + " ".join(map(str, row)) + "]" for row in np_array]
+
+    return py_list, formatted_np_array
+
+# 调用函数
+py_list, formatted_np_array = generate_list_array(5)
+
+print("标准的 Python 列表格式:")
+for row in py_list:
+    print(row)
+print("\nNumPy 数组格式:")
+for row in formatted_np_array:
+    print(row)
+```
