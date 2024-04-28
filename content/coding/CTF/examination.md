@@ -32,131 +32,76 @@ date: 2024-04-26
 
    1. Python 脚本
 
-   ```python
-   import pytesseract
-   from PIL import Image, ImageEnhance, ImageFilter
+```python
+from PIL import Image, ImageEnhance  # pip install Pillow
 
-   # Open the image
-   img = Image.open("file.jpg")
+import pytesseract  # pip install pytesseract
+import re
 
-   # Enhance the image contrast
-   enhancer = ImageEnhance.Contrast(img)
-   img_enhanced = enhancer.enhance(1.5)  # adjust the contrast level
+# 定义函数,识别数表图片为二维数组列表
 
-   # Resize and apply a threshold filter for binarization
-   img_resized = img_enhanced.resize((1024, 768))
-   img_binarized = img_resized.convert("L").point(lambda x: 0 if x < 128 else 255, "1")
+def image_to_matrix(image_path):
+    # 打开并增强图像
+    image = Image.open(image_path)
+    image = ImageEnhance.Contrast(image).enhance(1.5).resize((1024, 768))
 
-   # Configure Tesseract to treat the image as a single uniform block of text
-   custom_config = r"--oem 3 --psm 6"
-   text = pytesseract.image_to_string(img_binarized, config=custom_config)
+    # 使用 pytesseract 提取文本
+    custom_config = r"--oem 3 --psm 6"
+    text = pytesseract.image_to_string(image, config=custom_config)
 
-   text = text.replace("°", " ")
-   # print(text)
+    # 过滤不需要的字符
+    filter_text = re.sub(r"[^\d\s]", "", text)
 
+    # 将文本转换为矩阵
+    matrix = [list(map(int, line.split())) for line in filter_text.strip().split("\n")]
+    return matrix
 
-   # 处理字符串，转换为二维数组
-   def convert_text_to_matrix(text):
-       # 按行分割文本
-       lines = text.strip().split("\n")
+# 定义函数找到序列的最大乘积
 
-       # 创建二维数组
-       matrix = []
-       for line in lines:
-           # 过滤掉非数字字符，然后按空白字符分割每行
-           numbers = line.strip().split()
-           # 将分割后的字符串转换为整数列表
-           number_list = [int(num) for num in numbers if num.isdigit()]
-           # 将列表添加到最终的数组中
-           if number_list:
-               matrix.append(number_list)
+def find_max_prod(matrix, n):
+    row_len, col_len = len(matrix), len(matrix[0])
+    max_product = 0
+    max_sequence = []
 
-       return matrix
+    for row in range(row_len):
+        for col in range(col_len):
+            # 检查所有四个可能的方向
+            directions = [
+                (0, 1),  # 水平
+                (1, 0),  # 垂直
+                (1, 1),  # 对角
+                (1, -1),  # 反对角
+            ]
+            for dr, dc in directions:
+                if (
+                    0 <= col + dc * (n - 1) < col_len
+                    and 0 <= row + dr * (n - 1) < row_len
+                ):
+                    product = 1
+                    sequence = [matrix[row + i * dr][col + i * dc] for i in range(n)]
+                    for num in sequence:
+                        product *= num
+                    if product > max_product:
+                        max_product = product
+                        max_sequence = sequence
 
+    return max_sequence, max_product
 
-   # 转换文本到二维数组
-   matrix = convert_text_to_matrix(text)
-   # print(matrix)
+# 数表图片转二维数组列表
 
+matrix = image_to_matrix("file.jpg")
 
-   # 打印二维数组
-   # print("Converted Matrix:")
-   # for row in matrix:
-   #     print(row)
+# 获取一条线上5个数的最大乘积和序列
 
+max_sequence, max_product = find_max_prod(matrix, 5)
 
-   def max_product(matrix):
-       n = len(matrix)
-       max_prod = 0
-       max_numbers = []
+# 打印结果
 
-       # 检查行和列
-       for i in range(n):
-           for j in range(n - 4):
-               # 行的乘积
-               row_prod = (
-                   matrix[i][j]
-                   * matrix[i][j + 1]
-                   * matrix[i][j + 2]
-                   * matrix[i][j + 3]
-                   * matrix[i][j + 4]
-               )
-               if row_prod > max_prod:
-                   max_prod = row_prod
-                   max_numbers = matrix[i][j : j + 5]
+print("最大乘积:", max_product)
+print("具有最大乘积的序列:", max_sequence)
+print("序列按照数字升序:", "".join(sorted("".join(map(str, max_sequence)))))
 
-               # 列的乘积
-               col_prod = (
-                   matrix[j][i]
-                   * matrix[j + 1][i]
-                   * matrix[j + 2][i]
-                   * matrix[j + 3][i]
-                   * matrix[j + 4][i]
-               )
-               if col_prod > max_prod:
-                   max_prod = col_prod
-                   max_numbers = [matrix[j + k][i] for k in range(5)]
-
-       # 检查对角线
-       for i in range(n - 4):
-           for j in range(n - 4):
-               # 主对角线
-               diag1_prod = (
-                   matrix[i][j]
-                   * matrix[i + 1][j + 1]
-                   * matrix[i + 2][j + 2]
-                   * matrix[i + 3][j + 3]
-                   * matrix[i + 4][j + 4]
-               )
-               if diag1_prod > max_prod:
-                   max_prod = diag1_prod
-                   max_numbers = [matrix[i + k][j + k] for k in range(5)]
-
-               # 反对角线
-               diag2_prod = (
-                   matrix[i][j + 4]
-                   * matrix[i + 1][j + 3]
-                   * matrix[i + 2][j + 2]
-                   * matrix[i + 3][j + 1]
-                   * matrix[i + 4][j]
-               )
-               if diag2_prod > max_prod:
-                   max_prod = diag2_prod
-                   max_numbers = [matrix[i + k][j + 4 - k] for k in range(5)]
-
-       # 生成密码串
-       max_numbers.sort()
-       password = "".join(map(str, max_numbers))
-       return max_prod, password
-
-
-   # 假设 matrix 已经是一个定义好的 15x15 的二维数组
-
-
-   max_prod, password = max_product(matrix)
-   print("最大乘积：", max_prod)
-   print("密码串：", password)
-   ```
+```
 
 5. 密码学，凯撒密码
 
