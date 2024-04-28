@@ -1,5 +1,5 @@
 ---
-title: 数表求最大乘积
+title: easysum 数表求最大乘积
 draft: false
 tags:
   - python
