@@ -27,7 +27,7 @@ date: 2024-04-26
 
 4. 杂项，文件
    1. `hex edit`，修复头部`504b` 为`zip`，解压获得`2.png`，修改 `jpg` 高度
-   
+
 5. 数表求乘积
 
    1. Python 脚本
@@ -37,7 +37,7 @@ date: 2024-04-26
    from PIL import Image, ImageEnhance, ImageFilter
 
    # Open the image
-   img = Image.open("/Users/chi/Desktop/file-easysum/file.jpg")
+   img = Image.open("file.jpg")
 
    # Enhance the image contrast
    enhancer = ImageEnhance.Contrast(img)
