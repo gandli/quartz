@@ -37,12 +37,13 @@ python -V
 
 ### 变量类型
 
-> ![info]tips
+> [!tips]
 > 
 > - 变量名只能包含字母、数字和下划线。变量名能以字母或下划线打头，但不能以数 字打头。例如，可将变量命名为message_1 ，但不能将其命名为1_message 。 
 > - 变量名不能包含空格，但能使用下划线来分隔其中的单词。例如，变量名 greeting_message 可行，但变量名greeting message 会引发错误。 
 > - 不要将Python关键字和函数名用作变量名，即不要使用Python保留用于特殊用途的 单词，如print (请参见附录A.4)。 
 > - 变量名应既简短又具有描述性。例如，name 比n 好，student_name 比s_n 好，name_length 比length_of_persons_name 好。
 > - 慎用小写字母i和大写字母O ，因为它们可能被人错看成数字1 和0 。
-> - 
+
+
 ### 排版注释
