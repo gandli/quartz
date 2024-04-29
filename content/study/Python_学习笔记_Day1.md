@@ -4,6 +4,8 @@ draft: false
 tags:
   - python
   - 基础知识
+  - coding
+  - Study
 date: 2024-04-29
 ---
 ## 环境安装
@@ -25,9 +27,14 @@ echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 exec "$SHELL"
 
 brew install openssl readline sqlite3 xz zlib tcl-tk
-
-
-
+pyenv install --list
+pyenv install 3.10.14
+pyenv global 3.10.14
+python -V
 ```
 
 ## 基本语法
+
+### 变量类型
+
+### 排版注释
