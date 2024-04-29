@@ -15,7 +15,18 @@ date: 2024-04-29
 ![[Pasted image 20240429091642.png]]
 
 
-```bash
+```shell
+brew install pyenv
+
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+
+exec "$SHELL"
+
+brew install openssl readline sqlite3 xz zlib tcl-tk
+
+
 
 ```
 
