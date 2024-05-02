@@ -4,13 +4,7 @@ from dotenv import load_dotenv
 load_dotenv(override=True)
 ```
 
-
-
-
     True
-
-
-
 
 ```python
 import pandas as pd
@@ -18,9 +12,6 @@ import pandas as pd
 data = pd.read_csv("data.csv")
 data.head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -35,6 +26,7 @@ data.head()
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -98,9 +90,6 @@ data.head()
 </table>
 </div>
 
-
-
-
 ```python
 import os
 from langchain_groq.chat_models import ChatGroq
@@ -111,7 +100,6 @@ llm = ChatGroq(
 )
 ```
 
-
 ```python
 from pandasai import SmartDataframe
 
@@ -120,13 +108,9 @@ df = SmartDataframe(data, config={"llm": llm})
 
 平均收入排名前五的城市是哪些?
 
-
 ```python
 df.chat("What are the top 5 cities for average income?")
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -141,6 +125,7 @@ df.chat("What are the top 5 cities for average income?")
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -178,10 +163,7 @@ df.chat("What are the top 5 cities for average income?")
 </table>
 </div>
 
-
-
 计算每个职业的平均收入，然后将前5个职业从高到低排序
-
 
 ```python
 df.chat(
@@ -197,16 +179,9 @@ df.chat(
 
     '/Users/chi/Desktop/quartz/content/study/exports/charts/temp_chart.png'
 
-
-
-
-    
 ![png](pandasai_cvs_files/pandasai_cvs_7_2.png)
-    
-
 
 首先，按平均收入从高到低对城市进行排序，然后创建一个条形图，显示平均收入排名前10位的城市
-
 
 ```python
 df.chat(
@@ -214,21 +189,11 @@ df.chat(
 )
 ```
 
-
-
-
     '/Users/chi/Desktop/quartz/content/study/exports/charts/temp_chart.png'
 
-
-
-
-    
 ![png](pandasai_cvs_files/pandasai_cvs_9_1.png)
-    
-
 
 首先，计算每个职业的人数，然后根据人数创建一个饼状图，列出前5个职业
-
 
 ```python
 df.chat(
@@ -236,15 +201,6 @@ df.chat(
 )
 ```
 
-
-
-
     '/Users/chi/Desktop/quartz/content/study/exports/charts/temp_chart.png'
 
-
-
-
-    
 ![png](pandasai_cvs_files/pandasai_cvs_11_1.png)
-    
-

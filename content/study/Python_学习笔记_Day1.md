@@ -8,6 +8,7 @@ tags:
   - Study
 date: 2024-04-29
 ---
+
 ## 环境安装
 
 - [pyenv](https://github.com/pyenv/pyenv) :简单的 Python 版本管理

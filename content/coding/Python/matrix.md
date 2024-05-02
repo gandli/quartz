@@ -8,6 +8,7 @@ tags:
   - 随机数
 date: 2024-04-27
 ---
+
 ## 生成一个数字矩阵
 
 ### 列表推导的方法
@@ -29,6 +30,7 @@ for row in matrix:
 [16, 17, 18, 19, 20]
 [21, 22, 23, 24, 25]
 ```
+
 ### 写成函数
 
 ```python
@@ -84,8 +86,8 @@ def generate_matrix(n):
             num += 1
         result.append(row)
     return result
-    
-matrix = generate_matrix(5)    
+
+matrix = generate_matrix(5)
 ```
 
 ## 使用第三方库
@@ -99,8 +101,8 @@ import numpy as np
 
 def generate_matrix(n):
     return np.arange(1, n * n + 1).reshape(n, n)
-    
-matrix = generate_matrix(5) 
+
+matrix = generate_matrix(5)
 ```
 
 输出：
@@ -112,6 +114,7 @@ matrix = generate_matrix(5)
 [16 17 18 19 20]
 [21 22 23 24 25]
 ```
+
 ### `np` 的 `random.randint`
 
 ```python
@@ -121,8 +124,8 @@ import numpy as np
 
 def generate_matrix(n):
 	return np.random.randint(1,n*n,size=(n,n))
-	    
-matrix = generate_matrix(5) 
+
+matrix = generate_matrix(5)
 ```
 
 输出：
@@ -144,8 +147,8 @@ import numpy as np
 
 def generate_matrix(n):
     return np.arange(1, n * n + 1).reshape(n, n).tolist()
-    
-matrix = generate_matrix(5) 
+
+matrix = generate_matrix(5)
 ```
 
 ```python
@@ -155,8 +158,8 @@ import numpy as np
 
 def generate_matrix(n):
 	return np.random.randint(1,n*n,size=(n,n)).tolist()
-	    
-matrix = generate_matrix(5) 
+
+matrix = generate_matrix(5)
 ```
 
 ## NumPy 数组格式和标准的 Python 列表格式
@@ -190,12 +193,12 @@ matrix = generate_matrix(5)
 ```
 
 1. **NumPy 数组格式：** 当你直接打印一个 NumPy 数组时，它会以一种类似矩阵的格式输出，元素之间没有明确的分隔符，而是用空格或换行符进行分隔。这种格式更接近数学中矩阵的表示。
-    
-    示例：`[[1 2 3] [4 5 6] [7 8 9]]`
-    
+
+   示例：`[[1 2 3] [4 5 6] [7 8 9]]`
+
 2. **标准的 Python 列表格式：** 当你直接打印一个 Python 列表时，它会以一种以逗号分隔的方式输出，每个子列表使用方括号括起来，元素之间用逗号分隔。
-    
-    示例：`[[1, 2, 3], [4, 5, 6], [7, 8, 9]]`
+
+   示例：`[[1, 2, 3], [4, 5, 6], [7, 8, 9]]`
 
 ## 使用 列表推导和嵌套循环 生成 NumPy 数组格式
 
@@ -258,17 +261,17 @@ numpy_array = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 # 转换为 Python 列表
 python_list = numpy_array.tolist()
 
-# 打印 
+# 打印
 print(numpy_array)
 print("\n", python_list)
 ```
-
 
 ## 数值的随机性
 
 ### 标准的 Python 列表格式和NumPy 数组格式
 
 1. 列表推导
+
 ```python
 # 列表推导
 def generate_list_array(n):
@@ -290,7 +293,9 @@ print("\nNumPy 数组格式:")
 for row in np_array:
     print(row)
 ```
+
 1. 嵌套循环
+
 ```python
 # 嵌套循环
 def generate_list_array(n):
@@ -319,6 +324,7 @@ print("\nNumPy 数组格式:")
 for row in np_array:
     print(row)
 ```
+
 3. 第三方库
 
 ```python
@@ -347,11 +353,12 @@ for row in formatted_np_array:
     print(row)
 ```
 
-## `range(start, stop)` 和 `np.arange(start, stop)` 
+## `range(start, stop)` 和 `np.arange(start, stop)`
 
 `range(start, stop)` 和 `np.arange(start, stop)` 都是用来生成一个连续整数序列的，但它们来自不同的库并且有一些细微的差别。下面是它们的基本用法和取值范围的详细解释：
 
 ### `range(start, stop)`
+
 `range()` 是 Python 内置的函数，用于生成一个不可变的序列类型，这个序列通常用于循环中。`range()` 生成的是一个迭代器，它不会立即分配内存来存储整个数列。
 
 - **start**：序列的起始值，包含在序列中。
@@ -361,6 +368,7 @@ for row in formatted_np_array:
 `range()` 只能用于生成整数序列。
 
 ### `np.arange(start, stop, [step, dtype])`
+
 `np.arange()` 是 `NumPy` 库中的函数，它返回一个数组，而不是一个迭代器。这意味着 `np.arange()` 会立即分配内存来存储整个数列。
 
 - **start**：序列的起始值，包含在数组中。
@@ -373,12 +381,14 @@ for row in formatted_np_array:
 ### 示例
 
 **使用 `range()` 生成整数序列：**
+
 ```python
 for i in range(1, 10):
     print(i, end=' ')  # 输出 1 2 3 4 5 6 7 8 9
 ```
 
 **使用 `np.arange()` 生成浮点数序列：**
+
 ```python
 import numpy as np
 arr = np.arange(0.5, 5.5, 0.5)
@@ -387,7 +397,8 @@ print(arr)  # 输出 [0.5 1.  1.5  2.  2.5 3.  3.5 4.  4.5 5. ]
 
 选择 `range()` 还是 `np.arange()` 取决于具体的使用场景。如果你需要高性能的数组操作，特别是在科学计算中，`np.arange()` 更加适合。而对于基本的迭代需求，`range()` 更加简单且内存效率更高。
 
-##  使用 `random` 生成一个随机数
+## 使用 `random` 生成一个随机数
+
 在 Python 中生成随机数可以通过标准库中的 `random` 模块来实现。这个模块提供了生成随机数的多种方法，适用于不同的需求。下面是一些常用的功能及其用法：
 
 ### 1. 生成一个随机浮点数
@@ -600,4 +611,3 @@ NumPy 数组格式:
 [41 32 17 21 68]
 [9 83 82 39 71]
 ```
-
