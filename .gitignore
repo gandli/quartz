@@ -2,7 +2,6 @@
 .DS_Store
 
 # Config files
-.gitignore
 tsconfig.tsbuildinfo
 
 # Project directories
