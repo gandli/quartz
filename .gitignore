@@ -1,12 +1,124 @@
+# Operating System files
 .DS_Store
-.gitignore
-node_modules
-public
-prof
+
+# Config files
+# .gitignore
 tsconfig.tsbuildinfo
-.obsidian
-.quartz-cache
+
+# Project directories
+node_modules/
+public/
+prof/
+.obsidian/
+.quartz-cache/
 private/
-.replit
+.replit/
 replit.nix
 .vscode/
+bun.lockb
+package-lock.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directories
+coverage/
+*.lcov
+.nyc_output
+
+# Dependency directories
+bower_components/
+jspm_packages/
+web_modules/
+
+# Compiled binary addons
+build/Release/
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# REPL history
+.node_repl_history
+
+# npm pack
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# parcel-bundler cache
+.cache
+.parcel-cache
+
+# Build output directories
+.next/
+out/
+.nuxt/
+dist/
+.vuepress/dist/
+.temp
+.docusaurus/
+.serverless/
+.fusebox/
+
+# Temporary files
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Snowpack cache
+.snowpack/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# VSCode test versions
+.vscode-test/
+
+# Yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
